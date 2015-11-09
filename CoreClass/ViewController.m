@@ -28,7 +28,7 @@
     [self show];
     
     //测试用户模型
-    [self studentTest];
+    [self userTest];
 
 }
 
@@ -36,23 +36,29 @@
 /** 测试用户模型 */
 -(void)userTest{
     
-//    User *user = [[User alloc] init];
-//    
-//    //模拟服务器数据变更
-//    user.hostID = 1;
-//    user.userName = @"张三";
-//    user.level = 30;
-//    user.accountMoney = 80.0f;
-//    user.isVip = NO;
-//    
-//    [User save:user];
+    for (int i = 0 ; i< 20; i++) {
+        User *user = [[User alloc] init];
+        
+        //模拟服务器数据变更
+        user.hostID = i+1;
+        user.userName = @"张三";
+        user.level = 30;
+        user.userID = i;
+        user.accountMoney = 80.0f;
+        user.isVip = NO;
+        
+        [User save:user];
+    }
     
-//    NSArray *users = [User selectWhere:@"userName='张三'" groupBy:nil orderBy:nil limit:nil];
-//    
-//        NSArray *users2 = [User selectWhere:@"hostID<10'" groupBy:@"userName" orderBy:@"id" limit:@"0,5"];
-//    
-//    NSLog(@"%@",users);
-//    
+    
+    NSArray *users = [User selectWhere:@"userName='张三'" groupBy:nil orderBy:nil limit:nil];
+    
+    NSArray *users2 = [User selectWhere:@"userID<10" groupBy:nil orderBy:nil limit:nil];
+    
+    [User find:10];
+    
+    NSLog(@"%@  -- %@",users,users2);
+//
     
     
     
@@ -63,19 +69,19 @@
 -(void)studentTest{
     
 
-//    Pen *pen = [[Pen alloc] init];
-//    pen.hostID=1;
-//    pen.price = 10;
-//    pen.usageYear = 3;
-//    pen.brandName = @"国产好铅笔";
-//    
-//    Student *stu = [[Student alloc] init];
-//    stu.hostID=1;
-//    stu.name = @"冯成林";
-//    stu.pen = pen;
-//    stu.money = 8866;
-//    
-//    [Student save:stu];
+    Pen *pen = [[Pen alloc] init];
+    pen.hostID=1;
+    pen.price = 10;
+    pen.usageYear = 3;
+    pen.brandName = @"国产好铅笔";
+    
+    Student *stu = [[Student alloc] init];
+    stu.hostID=1;
+    stu.name = @"冯成林";
+    stu.pen = pen;
+    stu.money = 8866;
+    
+    [Student save:stu];
     
     
     //查询

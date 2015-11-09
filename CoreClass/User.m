@@ -12,7 +12,7 @@
 
 /** 描述 */
 -(NSString *)description{
-    return [NSString stringWithFormat:@"userName=%@,level=%@,accountMoney=%@,isVip=%@",self.userName,@(self.level),@(self.accountMoney),@(self.isVip)];
+    return [NSString stringWithFormat:@"userName=%@,level=%@,accountMoney=%@,isVip=%@,userID=%@",self.userName,@(self.level),@(self.accountMoney),@(self.isVip),@(self.userID)];
 }
 
 @end

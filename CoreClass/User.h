@@ -16,7 +16,7 @@
 
 /** 级别 */
 @property (nonatomic,assign) NSUInteger level;
-
+@property (nonatomic,assign) NSUInteger userID;
 /** 账户余额 */
 @property (nonatomic,assign) CGFloat accountMoney;
 
